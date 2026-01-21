@@ -2,8 +2,6 @@ from src.Data import * # Class containing the data
 from src.Assignment import * # Class containing an assignment
 from src.Model import * # Class containing a Pulp model used for optimization
 from src.ModelColumnGen import * # Class containing Pulp model that optimizes using column generation
-from src.ModelFracStable import * # Class containing a Pulp model for finding an fractionally stable stochastic improvement
-from src.ModelHeuristicLP import * # Class containing heuristic that will use generated weakly stable matchings as an input
 from src.DataGen import * # Generate student preferences and school priorities
 from src.DataGenEE import * # Generate data according to the method by Erdil & Ergin (2008)
 from src.DA_STB import * # Generate DA assignment with single tie-breaking (STB)
