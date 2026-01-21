@@ -1,3 +1,7 @@
+This code accompanies the paper 'Smart Lotteries in School Choice: Ex-Ante Improvement with Ex-Post Stability' by Haris Aziz, Gergely Csáji, Péter Biró, and Tom Demeulemeester.
+
+Consider a typical school choice setting where students have strict preferences and the schools have weak priorities, because they are indifferent between certain sets of students. This code can be used to compute random matchings that are ex-post stable (i.e., can be decomposed over a lottery of weakly stable matchings) that sd-improve upon a given random matching.
+
 To run the simulations, fill in the following parameters:
 
 **Main parameters**
@@ -30,5 +34,3 @@ To run the simulations, fill in the following parameters:
 * `alpha` and `beta`: parameters for data generation, see Erdil & Ergin (2008) for detailed explanation. Could be controled by setting `ALPHA_INCREMENT` and `BETA_INCREMENT` (to evaluate for range of values), or by simply add the desired values in the array
 
 * `print_intermediate`: boolean to control which output is printed
-
-Change the last boolean of the 
