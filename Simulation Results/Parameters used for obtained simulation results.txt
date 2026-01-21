@@ -1,0 +1,59 @@
+The plots in the paper are created based on the attached simulation results in file 'SIM_2025-12-02_220148.csv'.
+
+The following parameters were used to generate these results.
+
+# MAIN PARAMETERS
+
+n_students_schools = [[40,8],[80,16]]
+
+compare_solutions = ["SD_UPON_DA", "SD_UPON_EE", "SD_UPON_EADA", "SD_UPON_DA_SAMPLE", "SD_UPON_EE_SAMPLE", "SD_UPON_EADA_SAMPLE"]
+    # All options are: ["SD_UPON_DA", "SD_UPON_EE", "SD_UPON_EADA", "SD_UPON_DA_SAMPLE", "SD_UPON_EE_SAMPLE", "SD_UPON_EADA_SAMPLE"]
+
+n_iterations_simul = 10
+
+# DETAILED PARAMETERS
+bool_ColumnGen = True
+bool_supercolumn = True
+bool_identical_students = False
+
+n_match = 1000 
+time_lim = 600
+
+n_sol_extra_sample = 10000 # Number of extra solutions added to solution pool for sampling methods
+
+n_sol_pricing = 500 # Number of solutions found by traditional pricing (minimizing reduced cost)
+n_sol_pricingMinRank = 500 # Number of solutions found by pricing that minimizes average rank
+gap_solutionpool_pricing = 1.5 
+MIPGap = 0.5
+
+seed = 0
+
+ALPHA_INCREMENT = 0.20
+#BETA_INCREMENT = 0.5
+
+alpha = list(np.arange(0, 1.0, ALPHA_INCREMENT)) + [1.0]
+#beta = list(np.arange(0, 1.0, BETA_INCREMENT)) + [1.0]
+#alpha = [0.5]
+beta = [0.2,0.6]
+
+print_intermediate = False
+
+S_vector = SimulationCG(
+    COMPARE_SOLUTIONS = compare_solutions, 
+    n_students_schools = n_students_schools, 
+    alpha=alpha,
+    beta = beta,
+    n_iterations_simul = n_iterations_simul, 
+    n_match = n_match,
+    n_sol_pricingMinRank = n_sol_pricingMinRank,
+    n_sol_extra_sample = n_sol_extra_sample, 
+    time_lim = time_lim,
+    seed = seed,
+    n_sol_pricing = n_sol_pricing,
+    gap_pricing = gap_solutionpool_pricing,
+    MIPGap = MIPGap,
+    bool_ColumnGen = bool_ColumnGen,
+    bool_supercolumn = bool_supercolumn,
+    bool_identical_students = bool_identical_students,
+    print_out = print_intermediate)
+
